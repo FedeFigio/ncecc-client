@@ -3,7 +3,7 @@ import { useState } from "../composables/state";
 
 var socket = null;
 if (!socket) {
-  socket = io("ws://192.168.1.213:3001", {
+  socket = io(import.meta.env.VITE_WS_ENDPOINT, {
     reconnectionDelayMax: 10000,
   });
 }
@@ -26,5 +26,16 @@ export function useSocket() {
     });
   }
 
-  return { checkConnection, socket, startHosting };
+  async function requestStart(user) {
+    return new Promise((resolve, reject) => {
+      if (!socket) reject();
+      socket.emit("request-start", data);
+      socket.on("start-game", () => {
+        
+        resolve();
+      });
+    });
+  }
+
+  return { checkConnection, socket, startHosting, requestStart };
 }

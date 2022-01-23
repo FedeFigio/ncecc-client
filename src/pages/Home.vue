@@ -2,7 +2,7 @@
   <div>
     <h1>HOME</h1>
     <router-link to="/host">
-      <button>OSPITA</button>
+      <button class="rounded bg-blue-500 text-white p-4 font-luckiest-guy">OSPITA</button>
     </router-link>
   </div>
 </template>
