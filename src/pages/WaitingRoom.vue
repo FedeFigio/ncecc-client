@@ -2,7 +2,7 @@
   <div>
     <h1>WAITING ROOM</h1>
 
-    <button @click="startHosting">START</button>
+    <button @click="requestStart">START</button>
   </div>
 </template>
 
@@ -19,11 +19,10 @@ export default {
     const { requestStart: rs } = useSocket();
 
     async function requestStart() {
-      const response = await rs(form);
-      console.log("response", response);
+      const response = await rs(user);
     }
 
-    return { form, startHosting };
+    return { requestStart };
   },
 };
 </script>
