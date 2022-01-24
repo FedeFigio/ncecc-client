@@ -19,7 +19,8 @@ export default {
     const { requestStart: rs } = useSocket();
 
     async function requestStart() {
-      const response = await rs(user);
+      console.log(user);
+      //   const response = await rs(user);
     }
 
     return { requestStart };

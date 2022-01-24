@@ -3,39 +3,42 @@ import { useState } from "../composables/state";
 
 var socket = null;
 if (!socket) {
-  socket = io(import.meta.env.VITE_WS_ENDPOINT, {
-    reconnectionDelayMax: 10000,
-  });
+    socket = io(
+        import.meta.env.VITE_WS_ENDPOINT, {
+            reconnectionDelayMax: 10000,
+        });
 }
 
 export function useSocket() {
-  const { setRoom } = useState();
+    const { setRoom, setUser } = useState();
 
-  function checkConnection() {
-    return socket != null;
-  }
+    function checkConnection() {
+        return socket != null;
+    }
 
-  async function startHosting(data) {
-    return new Promise((resolve, reject) => {
-      if (!socket) reject();
-      socket.emit("start-hosting", data);
-      socket.on("hosting-started", (newRoom) => {
-        setRoom(newRoom);
-        resolve(newRoom);
-      });
-    });
-  }
+    async function startHosting(data) {
+        return new Promise((resolve, reject) => {
+            if (!socket) reject();
+            socket.emit("create-room", data);
+            socket.on("room-created", (newRoom, user) => {
+                setRoom(newRoom);
+                setUser(user);
+                console.log(newRoom, user);
+                resolve();
+            });
+        });
+    }
 
-  async function requestStart(user) {
-    return new Promise((resolve, reject) => {
-      if (!socket) reject();
-      socket.emit("request-start", data);
-      socket.on("start-game", () => {
-        
-        resolve();
-      });
-    });
-  }
+    async function requestStart(user) {
+        return new Promise((resolve, reject) => {
+            if (!socket) reject();
+            socket.emit("request-start", user);
+            socket.on("start-game", () => {
 
-  return { checkConnection, socket, startHosting, requestStart };
+                resolve();
+            });
+        });
+    }
+
+    return { checkConnection, socket, startHosting, requestStart };
 }
