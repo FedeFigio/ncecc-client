@@ -29,9 +29,6 @@ export default {
     // router
     const router = useRouter();
 
-    // state
-    const { setUser } = useState();
-
     // socket connection
     const loading = ref(false);
     const { startHosting: sh } = useSocket();
