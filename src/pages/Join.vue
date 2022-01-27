@@ -1,6 +1,6 @@
 <template>
   <MainLayout>
-    <Card title="accedi" class="text-black">
+    <Card title="accedi" class="text-black max-h-full">
       <div class="flex flex-col">
         <label class="font-luckiest-guy">USERNAME</label>
         <input
@@ -10,17 +10,38 @@
           v-model="username"
         />
       </div>
+      <div class="font-luckiest-guy">ROOMS</div>
 
-      <button
-        class="btn-primary"
-        v-for="room in rooms"
-        :key="room.id"
-        @click="goToRoom(room)"
-        :disabled="username == ''"
-      >
-        {{ room.id }}
-      </button>
-      <!-- <button class="btn-primary">pino</button> -->
+      <div class="flex flex-col h-[100%] overflow-y-auto space-y-4 max-w-full">
+        <button
+          class="btn-primary"
+          v-for="room in rooms"
+          :key="room.id"
+          @click="goToRoom(room)"
+          :disabled="username == ''"
+        >
+          {{ room.id }}
+        </button>
+        <button class="btn-primary">pinoasxfgbfgbfgbfg</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+        <button class="btn-primary">pino</button>
+      </div>
     </Card>
   </MainLayout>
 </template>

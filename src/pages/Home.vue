@@ -1,12 +1,14 @@
 <template>
   <MainLayout>
     <Card title="accedi">
-      <router-link to="/host" class="btn-primary" tag="button">
-        OSPITA
-      </router-link>
-      <router-link to="/join" class="btn-primary" tag="button">
-        UNISCITI
-      </router-link>
+      <div class="flex flex-col h-full space-y-4">
+        <router-link to="/host" class="btn-primary text-center" tag="button">
+          OSPITA
+        </router-link>
+        <router-link to="/join" class="btn-primary text-center" tag="button">
+          UNISCITI
+        </router-link>
+      </div>
     </Card>
   </MainLayout>
 </template>
