@@ -5,3 +5,11 @@
   font-weight: 400;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Fascinante Inline";
+  src: url(/assets/fonts/FascinateInline-Regular.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}

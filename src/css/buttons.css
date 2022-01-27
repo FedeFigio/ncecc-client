@@ -1,0 +1,5 @@
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2 bg-red-500 rounded-xl font-luckiest-guy text-white text-lg uppercase hover:bg-red-700 shadow-sm shadow-black/75 transition-all transform-gpu active:shadow-none active:translate-y-[0.1rem];
+  }
+}

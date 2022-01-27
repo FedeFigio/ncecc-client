@@ -1,0 +1,5 @@
+@layer components {
+  .input-primary {
+    @apply px-6 py-2 bg-dark/20 rounded-xl font-luckiest-guy  text-lg uppercase hover:bg-dark/30 focus:bg-dark/30 border-none    transition-all transform-gpu  active:translate-y-[0.1rem];
+  }
+}

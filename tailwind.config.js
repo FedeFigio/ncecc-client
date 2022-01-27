@@ -4,6 +4,14 @@ module.exports = {
     extend: {
       fontFamily: {
         "luckiest-guy": ["Luckiest Guy", "ui-sans-serif", "system-ui"],
+        "fascinante-inline": [
+          "Fascinante Inline",
+          "ui-sans-serif",
+          "system-ui",
+        ],
+      },
+      colors: {
+        dark: "#202124",
       },
     },
   },

@@ -1,14 +1,13 @@
 <template>
   <MainLayout>
-    <template #title>
-      <h1>HOME</h1>
-    </template>
-    <router-link to="/host">
-      <button>OSPITA</button>
-    </router-link>
-    <router-link to="/join">
-      <button>UNISCITI</button>
-    </router-link>
+    <Card title="accedi">
+      <router-link to="/host" class="btn-primary" tag="button">
+        OSPITA
+      </router-link>
+      <router-link to="/join" class="btn-primary" tag="button">
+        UNISCITI
+      </router-link>
+    </Card>
   </MainLayout>
 </template>
 
@@ -16,9 +15,11 @@
 import MainLayout from "../layouts/MainLayout.vue";
 import { useRouter } from "vue-router";
 import { ref } from "@vue/reactivity";
+import Card from "../components/Card.vue";
 export default {
   components: {
     MainLayout,
+    Card,
   },
 
   props: {

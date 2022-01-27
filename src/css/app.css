@@ -2,10 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import "buttons";
 @import "fonts";
-
-@layer components {
-  button {
-    @apply bg-blue-600 px-2 py-1 rounded font-luckiest-guy text-white;
-  }
-}
+@import "inputs";
